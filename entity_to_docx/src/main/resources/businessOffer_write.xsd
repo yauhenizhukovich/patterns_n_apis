@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.example.org"
+            elementFormDefault="qualified"
+            targetNamespace="http://www.example.org">
+
+    <xsd:element name="writeBusinessOfferRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="businessOfferId" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="writeBusinessOfferResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="messageFileWrote" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="businessInitiative">
+        <xsd:annotation>
+            <xsd:documentation>Business-initiative (main)element for "Banking product catalog" process
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="TBusinessInitiative"/>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="TBusinessInitiative">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="biPart1" type="TBusinessInitiativePart1"/>
+            <xsd:element minOccurs="0" name="biPart2" type="TBusinessInitiativePart2"/>
+            <xsd:element minOccurs="0" name="OnApprove" type="TBIOnDevelopmentRec"/>
+            <xsd:element minOccurs="0" name="OnConfirm" type="TBIOnDevelopmentRec"/>
+            <xsd:element minOccurs="0" name="OnConfirmCurator" type="TBIOnDevelopmentRec"/>
+            <xsd:element minOccurs="0" name="OnFamiliarize" type="TBIOnDevelopmentRec"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBusinessOffer">
+        <xsd:annotation>
+            <xsd:documentation>Тип корневого элемента</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="common" type="TBOCommon">
+                <xsd:annotation>
+                    <xsd:documentation>Блок Общие</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="businessGoalsBlock" type="TBIBusinessGoalsRec">
+                <xsd:annotation>
+                    <xsd:documentation>Блок Бизнес-цели</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="productManager" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>По умолчанию значение ФИО Менеджера продукта Сущности БИ</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="productManagerPosition" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Автоматически название должности НСИ «Должности» согласно Сотрудник = &lt;ФИО
+                        менеджера
+                        продукта&gt;
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="productManagerPhone" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Автоматически номер телефона НСИ «Сотрудники» согласно Сотрудник = &lt;ФИО
+                        менеджера продукта&gt;
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="productManagerDept" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>По умолчанию значение подразделение –разработчик Продукта Сущности БИ
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="productManagerSupervisor" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>По умолчанию значение ФИО Руководителя структурного подразделения – разработчика
+                        Сущности БИ
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="productManagerSupervisorPos" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Автоматически название должности НСИ «Должности» согласно Сотрудник = &lt;ФИО
+                        руководителя
+                        структурного подразделения – разработчика Продукта &gt;
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="productManagerSupervisorPhone" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Автоматически номер телефона НСИ «Сотрудники» согласно Сотрудник = &lt;ФИО
+                        руководителя структурного
+                        подразделения – разработчика Продукта &gt;
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="product" type="TBOProduct">
+                <xsd:annotation>
+                    <xsd:documentation>Блок Продукт</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="profitabilityCalculationBlock" type="TBOProfitabilityCalculation">
+                <xsd:annotation>
+                    <xsd:documentation>Блок Расчет доходности</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="relevance" type="TBIImplementationRisksRec">
+                <xsd:annotation>
+                    <xsd:documentation>Блок Актуальность</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="marketAnalisysBlock" type="TBOMarketAnalisysRec" minOccurs="0"/>
+            <xsd:element minOccurs="0" name="terms" type="TBOTerms">
+                <xsd:annotation>
+                    <xsd:documentation>Блок Сроки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="planGraphic" type="TBIPlanGraphic">
+                <xsd:annotation>
+                    <xsd:documentation>Блок План-график</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="delegation" type="TBEmployeeType">
+                <xsd:annotation>
+                    <xsd:documentation>Блок «Делегирование»</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="commiteeMaterials" nillable="true" type="TBOCommiteeMaterials">
+                <xsd:annotation>
+                    <xsd:documentation>Блок Материалы для комитета</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OnApprove" type="TBIOnDevelopmentRec"/>
+            <xsd:element minOccurs="0" name="OnConfirm" type="TBIOnDevelopmentRec"/>
+            <xsd:element minOccurs="0" name="OnConfirmProductTeam" type="TBIOnDevelopmentRec"/>
+            <xsd:element minOccurs="0" name="OnConfirmCurator" type="TBIOnDevelopmentRec"/>
+            <xsd:element minOccurs="0" name="OnOpinion" type="TBIOnDevelopmentRec"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBusinessInitiativePart1">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="commonBlock" type="TBICommonBlock"/>
+            <xsd:element minOccurs="0" name="biName" type="xsd:string"/>
+            <xsd:element default="Разработка" minOccurs="0" name="jobTypes" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="biPoint" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="businessGoalsBlock" type="TBIBusinessGoalsRec"/>
+            <xsd:element minOccurs="0" name="businessDirectionBlock" type="TBIBusinessDirectionRec"/>
+            <xsd:element minOccurs="0" name="product" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="realizeProspective" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="nonrealizeEffects" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="implPlanningDate" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="salesChannelsBlock" type="TBISalesChannelsRec"/>
+            <xsd:element minOccurs="0" name="addInfo" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBusinessInitiativePart2">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="infoSystemInfluenceBlock" type="TBIInfoSystemInfluencesRec"/>
+            <xsd:element minOccurs="0" name="ImplementationRisksBlock" type="TBIImplementationRisksRec"/>
+            <xsd:element minOccurs="0" name="marketAnalisys" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="marketAnalisysFile" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="businessAppImplDate" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="planGraphicDate" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="projectedExpencesBlock" type="TBIProjectedExpensesRec"/>
+            <xsd:element minOccurs="0" name="productTeamBlock" type="TBIProductTeamsRec"/>
+            <xsd:element minOccurs="0" name="planGraphic" type="TBIPlanGraphic"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBICommonBlock">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="idBI" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="productDeveloperDept" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="productDeveloperFIO" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="biDate" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="biStatus" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIBusinessGoalsRec">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="businessGoals" type="TBIBusinessGoals"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIBusinessGoals">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="businessGoalsName" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIBusinessDirectionRec">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="businessDirection" type="TBIBusinessDirection"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIBusinessDirection">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="targetAudience" type="TBITargetAudience"/>
+            <xsd:element minOccurs="0" name="choiseTargetAudience" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="businessDirection" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBITargetAudience">
+        <xsd:choice minOccurs="0">
+            <xsd:element minOccurs="0" name="targetAudienceLgE" type="TBITargetAudienceLgE"/>
+            <xsd:element minOccurs="0" name="targetAudiencePhP" type="TBITargetAudiencePhP"/>
+        </xsd:choice>
+    </xsd:complexType>
+    <xsd:complexType name="TBITargetAudienceLgE">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="activityKind" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBITargetAudiencePhP">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="resident" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBISalesChannelsRec">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="salesChannelsRecs" type="TBISalesChannels"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBISalesChannels">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="salesChannels" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIInfoSystemInfluencesRec">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="infoSystemInfluence" type="TBIInfoSystemInfluence"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIInfoSystemInfluence">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="infoSystemInfluence" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="influencedescription" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIImplementationRisksRec">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="implementationRisk" type="TBIImplementationRisk"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIImplementationRisk">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="riskName" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="occurProbability" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="stopFactors_MinProp" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="avalability" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIProjectedExpensesRec">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="projectedExpenses" type="TBIProjectedExpenses"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIProjectedExpenses">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="expensesTypes" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="expencesSize" type="xsd:float"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIProductTeamsRec">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="productTeams" type="TBIProductTeam"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIProductTeam">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="developDept" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="productManagerName" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="developMemberDept" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="developMemberName" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIPlanGraphic">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="idPlanGraphic" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="planGraphicDate" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="worksBlock" type="TBIWorksRec"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIWorksRec">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="works" type="TBIWork"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIWork">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="idWorks" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ppWorks" type="xsd:integer"/>
+            <xsd:element minOccurs="0" name="nestingLevel" type="xsd:integer"/>
+            <xsd:element minOccurs="0" name="worksName" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="worksDate" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="execDate" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="duration" type="xsd:integer"/>
+            <xsd:element minOccurs="0" name="ancestor" type="xsd:integer"/>
+            <xsd:element minOccurs="0" name="responsibles" type="TBIResponsiblesRec"/>
+            <xsd:element minOccurs="0" name="execStatus" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="readinessPercentage" type="SBIPercentageType"/>
+            <xsd:element minOccurs="0" name="comments" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="plannedProdLaunchDate" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="monitorReadyDate" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="readinessMonFreq" type="xsd:integer"/>
+
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIResponsiblesRec">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="responsibles" type="TBIResponsible"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIResponsible">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="deptName" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="respName" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIOnDevelopment">
+        <xsd:annotation>
+            <xsd:documentation>структура хранения фазы разработки Бизнес-инициативы</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="DevPhase" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DeptName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Название Подразделения разработчика</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="EmpPosition" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Должность разработчика</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="EmpName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>ФИО разработчика</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="EmpLogin" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>login разработчика</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Result" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Результат фазы</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DateTo" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата назначенной обработки фазы</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DateNom" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Реальная дата обработки фазы</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Comment" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Комментарий</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DLG_IdDev" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DLG_DeptName" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DLG_EmpPosition" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DLG_EmpName" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DLG_EmpLogin" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DLG_Result" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DLG_DateTo" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="DLG_DateNom" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="DLG_Comment" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBIOnDevelopmentRec">
+        <xsd:sequence minOccurs="0">
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="record" type="TBIOnDevelopment"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TUsersResponse">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="users" type="TUser"/>
+            <xsd:element minOccurs="0" name="message" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="message2" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="TUser">
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="name" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="email" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="description" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="departmentNumber" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TPaybackAssessmentReport">
+        <xsd:sequence>
+            <xsd:element name="author" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Фамилия И.О. Текущего пользователя (НСИ «Сотрудники»)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="department" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Название подразделения Текущего пользователя (НСИ «Подразделения»)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="position" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Должность Текущего пользователя (НСИ «Должности»)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="creationReportDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата создания отчета. Дата отправки отчета посредством BPM.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="monitoringTerm" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Срок предварительного мониторинга. Сущность БП.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="productName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Название продукта. НСИ «Каталог продуктов».</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="profitabilityCalc" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Расчет доходности. Ссылка. В зависимости от выбранного продукта, при наличии БП.
+                        Отсутствует
+                        заполнение, при отсутствии БП.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="biName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Название БИ. Сущности БИ (при наличие) выбранного продукта.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="paybackPlanTerm" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Срок окупаемости план., месяц</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="paybackFactTerm" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Срок окупаемости факт., месяц</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="nextAssessmentDate" type="xsd:date" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>Дата проведения следующей оценки окупаемости. Атрибут обязателен, если принято
+                        решение:-Модификация и
+                        повторный мониторинг-Модернизация и повторный мониторинг-Без изменений и повторный
+                        мониторингАтрибут не обязателен,
+                        если не принято решение «Повторный мониторинг»
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="desicion" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Принято решение.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="biImplDate" type="xsd:date" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>Дата разработки БИ.Если Принято решение = Модернизация и повторный мониторинг ИЛИ
+                        Если Принято
+                        решение = Модернизация
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TMonitorProductReport">
+        <xsd:sequence>
+            <xsd:element name="department" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Название подразделения Текущего пользователя (НСИ «Подразделения»)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="author" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Фамилия И.О. Текущего пользователя (НСИ «Сотрудники»)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="position" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Должность Текущего пользователя (НСИ «Должности»)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="creationReportDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата создания отчета. Дата отправки отчета посредством BPM.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="monitoringTerm" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Срок предварительного мониторинга. Сущность БП.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="productName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Название продукта. НСИ «Каталог продуктов».</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="biName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Название БИ Сущности БИ (при наличие)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="profitabilityCalc" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Расчет доходности. Ссылка. В зависимости от выбранного продукта, при наличии БП.
+                        Отсутствует
+                        заполнение, при отсутствии БП.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="paybackTerm" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Срок окупаемости, месяц. Плановый Срок окупаемости.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="productMonitoringReport" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Отчет о мониторинге продукта. Ссылка. UC Прикрепить файл.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="nextMonitoringDate" type="xsd:date" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>Дата проведения следующего мониторинга.Атрибут обязателен, если принято
+                        решение:-Модификация и
+                        повторный мониторинг-Модернизация и повторный мониторинг-Без изменений и повторный
+                        мониторингАтрибут не обязателен,
+                        если не принято решение «Повторный мониторинг».
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="desicion" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Принято решение.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="biImplDate" type="xsd:date" nillable="true">
+                <xsd:annotation>
+                    <xsd:documentation>Дата разработки БИ.Если Принято решение = Модернизация и повторный мониторинг ИЛИ
+                        Если Принято
+                        решение = Модернизация
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TBIRegistry">
+        <xsd:sequence>
+            <xsd:element name="sign" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Выбор записи реестра для последующей операцииТолько одна</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="biName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Название БИ</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="biStatusDate" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Атрибут «Статус» + атрибут «Дата создания БИ» сущности БИ</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="bpName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Атрибут «Название бизнес-предложения» сущности БП</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="bpStatusDate" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Атрибут «Статус» + атрибут «Дата разработки бизнес-предложения» сущности БПФормат
+                        даты дд.мм.гггг
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="bankProductCard" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Атрибут «Название продукта» сущности Карточка банковского продукта
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="productStatus" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Атрибут «Статус продукта» сущности Карточка банковского продукта
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="productName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Атрибут «Название» сущности Продукт</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TBankingProductCard">
+        <xsd:sequence minOccurs="0">
+            <xsd:element name="common" type="TBPCommon" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Блок Общие</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="productCardDistribution" type="TBEmployeeType" maxOccurs="unbounded" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Блок рассылка карточки продукта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBPCommon">
+        <xsd:annotation>
+            <xsd:documentation>Блок Общие</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0">
+            <xsd:element name="bpID" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Идентификационный номер карточки банковского продукта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="productName" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Название продукта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="commonProductChars" type="xsd:string" nillable="true" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Общая характеристика банковского продукта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="productStatus" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Статус продукта. Возможные значения:- Активный- Закрытый для продаж-
+                        Ликвидирован
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="changeStatusDate" type="xsd:date" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Дата изменения статуса</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="productAdvantages" type="xsd:string" nillable="true" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Достоинства продукта для клиента. Ручной ввод.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="mainProductParams" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Основные параметры продукта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="deptName" type="xsd:string" maxOccurs="unbounded" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Наименование подразделения НСИ «Подразделения»Может быть больше 1
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="docsForms" type="xsd:string" nillable="true" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Типовые формы документов, использующиеся для банковского продукта. Ручной ввод.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="lpaBanks" type="xsd:string" nillable="true" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>ЛПА банка, касающиеся данного банковского продукта. Ручной ввод.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="addMaterials" type="xsd:string" nillable="true" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Дополнительные материалы.Ручной ввод.По умолчанию «Нет».</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="consaltDeptName" type="xsd:string" nillable="true" maxOccurs="unbounded" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Наименование подразделения для консультации. НСИ «Подразделения»Может быть больше
+                        1
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBEmployeeType">
+        <xsd:annotation>
+            <xsd:documentation>Тип Сотрудник</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="employeeName" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Фамилия И.О. сотрудника, НСИ «Сотрудники»</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="deptName" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Наименование подразделения НСИ «Подразделения» в разрезе вышестоящего
+                        подразделения
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="employeePosition" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Наименование должности сотрудника, НСИ «Должности» согласно ФИО сотрудника
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBOCommon">
+        <xsd:annotation>
+            <xsd:documentation>Блок Общие</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="boID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Идентификационный номер БП</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="boName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Название бизнес-предложения. По умолчанию значение Название БИ Сущности БИ или
+                        Ручной ввод.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="boStatus" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Статус БП</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBOProduct">
+        <xsd:annotation>
+            <xsd:documentation>Блок Продукт</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="productDesc" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Текстовое описание продукта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="techProcessDesc" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Текстовое описание процесса</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="processModel" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Модель процесса. UC Прикрепить файл.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBOProfitabilityCalculation">
+        <xsd:annotation>
+            <xsd:documentation>Блок Расчет доходности</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="profitabilityCalculation" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Расчет доходности. UC Прикрепить файл.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="profitabilityTerm" type="SBOMonthType">
+                <xsd:annotation>
+                    <xsd:documentation>Срок окупаемости, месяц. Плановый Срок окупаемости.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="preliminaryMonitoringTerm" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Дата предварительного мониторинга</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBOCommiteeMaterials">
+        <xsd:annotation>
+            <xsd:documentation>Блок Материалы для комитета</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="decisionProject" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Проект решения. Ссылка. UC Прикрепить файл.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="explanatoryNote" nillable="true" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Пояснительная записка. Ссылка. UC Прикрепить файл.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBOTerms">
+        <xsd:annotation>
+            <xsd:documentation>Блок Сроки</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="proposedProductImplDate" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Автоматически значение Планируемой даты внедрения сущности БИс возможностью
+                        редактирования
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="proposedDeadlineAchieveEffect" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Предлагаемый срок достижения экономического эффекта /получения выгоды для бизнеса
+                        от внедрения
+                        Продукта
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBOMarketAnalisysRec">
+        <xsd:sequence>
+            <xsd:element name="records" type="TBOMarketAnalisys" maxOccurs="unbounded" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TBOMarketAnalisys">
+        <xsd:annotation>
+            <xsd:documentation>Блок Актуальность/Анализ рынка</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" name="marketAnalisys" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Анализ рынка</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="marketAnalisysFile" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Файл (для анализа рынка). Ссылка. Возможно прикрепление файла.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TChangesHistoryRec">
+        <xsd:sequence minOccurs="0">
+            <xsd:element name="records" minOccurs="0" maxOccurs="unbounded" type="TChangesHistory">
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TChangesHistory">
+        <xsd:annotation>
+            <xsd:documentation>История изменений</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="0">
+            <xsd:element name="attributeName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="attributeValuePrev" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="attributeValueChanged" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="changingDate" type="xsd:date" minOccurs="0"/>
+            <xsd:element name="user" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="SBIPercentageType">
+        <xsd:restriction base="xsd:integer">
+            <xsd:enumeration value="0"/>
+            <xsd:enumeration value="10"/>
+            <xsd:enumeration value="20"/>
+            <xsd:enumeration value="30"/>
+            <xsd:enumeration value="40"/>
+            <xsd:enumeration value="50"/>
+            <xsd:enumeration value="60"/>
+            <xsd:enumeration value="70"/>
+            <xsd:enumeration value="80"/>
+            <xsd:enumeration value="90"/>
+            <xsd:enumeration value="100"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="SBOMonthType">
+        <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="2"/>
+            <xsd:maxInclusive value="99"/>
+            <xsd:minInclusive value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

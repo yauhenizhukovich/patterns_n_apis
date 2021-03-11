@@ -1,0 +1,48 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org"
+                  targetNamespace="http://www.example.org">
+
+    <wsdl:types>
+        <xsd:schema xmlns="http://www.example.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    elementFormDefault="qualified">
+            <xsd:import namespace="http://www.example.org" schemaLocation="businessOffer_write.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:message name="writeBusinessOfferRequest">
+        <wsdl:part element="tns:writeBusinessOfferRequest" name="writeBusinessOfferRequest"/>
+    </wsdl:message>
+
+    <wsdl:message name="writeBusinessOfferResponse">
+        <wsdl:part element="tns:writeBusinessOfferResponse" name="writeBusinessOfferResponse"/>
+    </wsdl:message>
+
+    <wsdl:portType name="BusinessInitiativePort">
+        <wsdl:operation name="writeBusinessOffer">
+            <wsdl:input message="tns:writeBusinessOfferRequest" name="writeBusinessOfferRequest"/>
+            <wsdl:output message="tns:writeBusinessOfferResponse"
+                         name="writeBusinessOfferResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="BusinessInitiativePortSoap11" type="tns:BusinessInitiativePort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="writeBusinessOffer">
+            <soap:operation soapAction=""/>
+
+            <wsdl:input name="writeBusinessOfferRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+
+            <wsdl:output name="writeBusinessOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="BusinessInitiativePortService">
+        <wsdl:port binding="tns:BusinessInitiativePortSoap11" name="BusinessInitiativePortSoap11">
+            <soap:address location="http://soabpm-server:7004/writebusinessoffer2"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,591 @@
+
+/******* Blue ****/
+/*
+ *	COLORS:
+ * #ffffff			Backgrounds
+ * #84baee			Buttons gradient bottom, help/print icons, flow navigation (base color)
+ * #1578d4			Buttons gradient top, percent/step navigation for flows, mobile nav control text (darker but brighter)
+ * #136bbd			Buttons border, flow navigation (even darker)
+ * #0e3862			Help background color (much darker)
+ * #f2f9ff			Section, Table header, Dropdown gradient, mobile views top
+ * #fffbf7			Invalid controls top (required but empty controls as well)
+ * #fffed9			Invalid controls bottom (required but empty controls as well)
+ * #a3d3ff			Flow NOT READY step, Disabled icons in task list (lighter than base to indicate not ready)
+ * #d9edff			Selected dropdown option, task in task list  (also a lighter version of base)
+ * #f2f9ff			Spaces watermark (even lighter version of base)
+ * #f7fbff			Spaces background (much lighter version of base)
+ *
+ * Colors below are fairly standard and are generally not modified
+ * #3ca959			Plus (+) icon (add repeat row)
+ * #3ca959			Locked by me task icon
+ * #d03232			Minus (-) icon (remove repeat row, attachment)
+ * #d03232			Locked by someone else task icon
+ * #ddeeee			Mobile phone background
+ * #ff5b4f			Collapsed section that is invalid (label/icon), must sign, error icon, error msg.
+ * #335413			Mobile ui bar text shadow
+ * #008500			Mobile ui success message gradient bottom
+ * #269926			Mobile ui success message gradient top
+ * #a30008			Mobile ui error message gradient bottom
+ * #bc2f36			Mobile ui error message gradient top
+ * #f15733			Toolbar icon
+ * #f8a18c			Toolbar disabled icon
+ *
+ * Colors below are fairly neutral and are rarely modified
+ *
+ * #ffffff			Submit text, Help text, gradient top or bottom.
+ * #f2f2f2			Disabled controls top
+ * #bfbfbf			Disabled controls font
+ * #f8f8f8			Message/Trigger bottom (default)
+ * #f0f0f0			Message/Trigger top (default)
+ * #badeff          Control borders, Spaces content border, radio/checkbox border
+ * #d9edff			Mobile phone border, Dropdown, Table, other ... borders
+ * #7b8085			Edit mode palette icons, secondary submit button (e.g. Forgot Password on login page)
+ * #464d54			Secondary submit button BG color.
+ * #dadee3			Secondary submit gradient bottom
+ * #9ea6ad			Secondary submit gradient top
+ * #bfffbf			Task list - SUBMITTED
+ * #ffdfdf			Task list - ABORTED
+ */
+
+/* Fonts */
+
+.f-form {
+    color:  #333333;
+}
+.f-input .input, .f-select1 .input, .f-select1 .textarea,
+.f-select .textarea, .f-textarea .textarea, .f-upload .f-upload-file-list a {
+    color: #111111;
+}
+
+/* Form background color */
+#page-form, #page-form.f-form, #page-form#container,
+#page-message.thanks-message, /* Form action message */
+#page-form#center, #form-container,
+.s-saveauth-lightbox .c-wizard, /* Ticket 15069 */
+.f-switch .h-case.s-selected .f-label /* Selected case - blending with the body effect */ {
+    background-color: #ffffff;
+}
+/* Decorators / Signature icon */
+.e-signature-x, .c-signature-name .X, .f-upload a .s-upload:before,
+.s-prepend aside.decorator, .s-append aside.decorator {
+    color: #a3d3ff;
+}
+.e-signature-line {
+    border-bottom: solid 1px #badeff;
+}
+
+/* Section,Table etc. Headers, Task List */
+.ui-li-gradient,
+#threecolumn .app-table .type-root .a-name, .task-info .ODD,
+.h-table, .f-switch .h-case, .f-table table thead,
+.h-section, .h-repeat, .h-panel,
+.b-droppable {
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff) to(#f2f9ff)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #ffffff, #f2f9ff); /* Chrome10+,Safari5.1+ */
+    background-image:    -moz-linear-gradient(top, #ffffff, #f2f9ff); /* FF3.6+ */
+    background-image:     -ms-linear-gradient(#ffffff, #f2f9ff); /* IE10 */
+    background-image:      -o-linear-gradient(top, #ffffff, #f2f9ff); /* Opera 11.10+ */
+    background-image:         linear-gradient(top, #ffffff, #f2f9ff); /* W3C */
+    background-color: #f2f9ff;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#f2f9ff'); /* IE6-9*/
+}
+/* Regular controls */
+.f-input .decorator,.f-textarea .decorator, .f-select1.Dropdown .decorator,
+.f-select .facade,.f-select1 .facade,.f-signature .facade {
+    background-color: none;
+}
+/* Invalid controls */
+.f-form .f-table .c-table .f-table-status,.f-select1.s-invalid .decorator,
+.f-upload.s-invalid.s-color-Default > .decorator,.f-input.s-invalid .decorator,.f-textarea.s-invalid .decorator,
+.f-select.s-invalid .facade,.f-select1.s-invalid .facade,.f-signature.s-invalid .facade {
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fffbf7) to(#fffed9));
+    background-image: -webkit-linear-gradient(top, #fffbf7, #fffed9);
+    background-image:    -moz-linear-gradient(top, #fffbf7, #fffed9);
+    background-image:     -ms-linear-gradient(#fffbf7, #fffed9);
+    background-image:      -o-linear-gradient(top, #fffbf7, #fffed9);
+    background-image:         linear-gradient(top, #fffbf7, #fffed9);
+    background-color: #fffed9;
+}
+.s-collapsed-invalid .h-section .f-label label, .s-collapsed-invalid .h-repeat .f-label label,
+.h-switch .s-unselected-invalid, /* Collapsed sections/repeats/tabs with invalid controls */
+.f-textarea.s-error .facade:before, .f-input.s-error .facade:before,	/* Invalid value in control receives s-error class */
+.f-form .f-status {
+    color:#ff5b4f;
+}
+/* Message control, trigger (button) - default buttons (colored buttons/messages are automatically included by frevvo)
+   Same color as Section headers etc. except in IE9. */
+.f-output.s-color-Default .facade, .f-output.Link.s-color-Default .decorator, .f-upload.s-color-Default > .decorator,
+.f-button.s-color-Default .decorator, .f-trigger.s-color-Default > .decorator, .f-trigger.s-color-Pre5_2 > .decorator {
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff) to(#f2f9ff)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #ffffff, #f2f9ff); /* Chrome10+,Safari5.1+ */
+    background-image:    -moz-linear-gradient(top, #ffffff, #f2f9ff); /* FF3.6+ */
+    background-image:     -ms-linear-gradient(#ffffff, #f2f9ff); /* IE10 */
+    background-image:      -o-linear-gradient(top, #ffffff, #f2f9ff); /* Opera 11.10+ */
+    background-image:         linear-gradient(top, #ffffff, #f2f9ff); /* W3C */
+    background-color: #f2f9ff;
+}
+/* Disabled controls */
+.f-upload .a-put-file.s-disabled,.f-input.s-disabled .decorator,.f-textarea.s-disabled .decorator,
+.f-select.s-disabled .facade,.f-select1.s-disabled .facade,.f-select1.s-disabled .decorator,
+.f-signature.s-disabled .facade {
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff) to(#f2f2f2));
+    background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+    background-image:    -moz-linear-gradient(top, #ffffff, #f2f2f2);
+    background-image:     -ms-linear-gradient(#ffffff, #f2f2f2);
+    background-image:      -o-linear-gradient(top, #ffffff, #f2f2f2);
+    background-image:         linear-gradient(top, #ffffff, #f2f2f2);
+    background-color: #f2f2f2;
+}
+/* Submit button */
+.f-control.s-submit .decorator {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #84baee), color-stop(100%, #1578d4));
+    background-image: -webkit-linear-gradient(#84baee, #1578d4);
+    background-image: -moz-linear-gradient(#84baee, #1578d4);
+    background-image: -o-linear-gradient(#84baee, #1578d4);
+    background-image: linear-gradient(#84baee, #1578d4);
+    background-color: #1578d4;
+    border: 1px solid #136bbd;
+}
+/* Secondary submit button */
+.f-control.s-submit.s-secondary .decorator {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f7fbff));
+    background-image: -webkit-linear-gradient(#ffffff, #f7fbff);
+    background-image: -moz-linear-gradient(#ffffff, #f7fbff);
+    background-image: -o-linear-gradient(#ffffff, #f7fbff);
+    background-image: linear-gradient(#ffffff, #f7fbff);
+    background-color: #464d54;
+    border: 1px solid #7b8085;
+}
+.ie8 .f-control.s-submit .decorator,
+.ie9 .f-control.s-submit .decorator {
+    background-color: #1578d4;
+}
+.s-submit .decorator, .s-submit .decorator input {
+    color: #ffffff;
+}
+.f-control.s-submit.s-secondary .decorator input {
+    color: #0e3862;
+}
+.s-submit.s-disabled .decorator,
+.s-submit.s-disabled .decorator input,
+.s-submit.s-invalid .decorator,
+.s-submit.s-invalid .decorator input {
+    color: #bfbfbf;
+}
+.f-control.s-cancel .decorator {
+    border-style: solid;
+    border-color: #136bbd;
+}
+.s-cancel .decorator, .s-cancel .decorator input {
+    color:  #136bbd;
+}
+.s-cancel.s-disabled .decorator,
+.s-cancel.s-disabled .decorator input {
+    color: #bfbfbf;
+}
+.ie8 .s-cancel .decorator {
+    border: 1px solid #136bbd !important;
+    padding-right: 10px;
+}
+/* Help, Toolbar icons */
+.f-form .f-help:before, .f-form .f-help:before, .f-form-tb a {
+    color: #84baee;
+    font-weight: normal;
+}
+/* Upload - file delete icon */
+.f-upload-file-list-delete:before {
+    color: #d03232;
+}
+/* Upload - input in the lightbox */
+.f-upload-input {
+    background-color: #dadada !important;
+}
+#f-wizard .buttons #captcha-error, #f-wizard .buttons #upload-file-error,
+#f-wizard .buttons #captcha-error:before, #f-wizard .buttons #upload-file-error:before {
+    color: #ff5b4f;
+}
+/* Mobile phone */
+.h-phone-group {
+    background-color: #ddeeee;
+    border-bottom: 1px solid #d9edff;
+}
+/*  Help display */
+#f-help-display {
+    background-color: #0e3862;
+    color: #ffffff;
+}
+/* Signed sections */
+.s-must-sign .c-signature-button, .s-must-sign .c-signature-facade {
+    color: #ff5b4f;
+}
+/* Upload/Signature/Trigger/Link button font colors */
+.s-add-files, .f-trigger .input, .f-link, .f-link a, .LinkedFormViewer .f-a-form-viewer,
+.s-signed .c-signature-button, .s-signed .c-signature-facade,
+.c-signature-button, .c-signature-facade {
+    color: #84baee;
+}
+/* Add/remove buttons for table/repeat */
+.f-add:before {
+    color: #3ca959;
+}
+.f-remove:before {
+    color: #d03232;
+}
+/* Expand/collapse for section/repeat */
+.s-expanded .f-expand:before, .s-collapsed .f-expand:before {
+    color: #84baee;
+}
+.s-collapsed-invalid .f-expand:before {
+    color: #ff5b4f;
+}
+/* Date picker icon */
+.DateTime .f-calendar:before, .Date .f-calendar:before {
+    color: #84baee;
+}
+/* Radios and checkboxes */
+.f-select-item span.radio-checkbox-option {
+    color: #111111;
+}
+.Radio icon-circle-blank:before {
+    color: #badeff;
+}
+/* Dropdown */
+.Dropdown .facade span:before {
+    color: #84baee;
+}
+.Dropdown ul {
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff) to(#f2f9ff)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #ffffff, #f2f9ff); /* Chrome10+,Safari5.1+ */
+    background-image:    -moz-linear-gradient(top, #ffffff, #f2f9ff); /* FF3.6+ */
+    background-image:     -ms-linear-gradient(#ffffff, #f2f9ff); /* IE10 */
+    background-image:      -o-linear-gradient(top, #ffffff, #f2f9ff); /* Opera 11.10+ */
+    background-image:         linear-gradient(top, #ffffff, #f2f9ff); /* W3C */
+    background-color: #f2f9ff;
+    border: 1px solid #d9edff;
+}
+.Dropdown ul:after {
+    border-color: #ffffff transparent;
+}
+.Dropdown ul:before {
+    border-color: #d9edff transparent;
+}
+.Dropdown ul li a.selected, .Dropdown ul li:hover a {
+    background: #d9edff;
+}
+.Dropdown ul li a {
+    border-bottom:1px solid #d9edff;
+    color: #111111;
+}
+/* Borders */
+div.FormGeneration, div.DefaultGeneratedForm,div.HttpWaitNotify,div.Summary,div.Form, /* Flow designer */
+.f-select-comment.textarea, .f-select-item span.radio-checkbox,
+.f-control .decorator, .f-control .facade, .Dropdown ul {
+    border-color:#badeff;
+}
+.f-select-item span.radio-checkbox i {
+    color:#badeff;
+}
+.f-select-item.s-checked span.radio-checkbox i {
+    color:#0e3862;
+}
+.s-prepend.DateTime .facade ~ .facade {
+    border-left:1px solid #badeff;
+}
+.f-section {
+    border: 1px solid #badeff;
+}
+.h-section, .h-repeat,
+.h-panel {
+    border-bottom: 1px solid #badeff;
+}
+.b-droppable {
+    border-top: 1px solid #badeff;
+}
+.f-table &gt; .b-droppable, .f-switch &gt; .b-droppable {
+                                               border: 1px solid #badeff;
+                                               border-top: 0;
+                                           }
+.f-switch .h-case {
+    border-top: 1px solid #badeff;
+    border-left: 1px solid #badeff;
+    border-right: 1px solid #badeff;
+}
+.c-switch {
+    border: 1px solid #badeff;
+}
+.f-table .h-table {
+    border: 1px solid #d9edff;
+}
+.f-table .c-table {
+    border-left: 1px solid #d9edff;
+    border-right: 1px solid #d9edff;
+    border-top: 1px solid #d9edff;
+}
+.f-table table thead th.first-column, .f-table table tbody .f-table-row td.add-column {
+    border-left: none;
+}
+.f-table table thead .f-table-head th.data-not-column, .f-table table tbody .f-table-row td.add-column,
+.f-table table tbody .f-table-row td.remove-column {
+    border-bottom: 1px solid #d9edff;
+}
+.f-table table .data-column {
+    border-color: #d9edff;
+    border-style: solid;
+}
+.f-table-row .f-control .facade,
+.f-table-row .f-select1 .facade {
+    border-style: none;
+}
+/******* Flows ****/
+#flow-fiv-status {	/* Percent/Step 1 of N flow navigation */
+    color: #1578d4;	/* same color as flow button gradient end color */
+}
+#flow-fiv-state li.RUNNING .s-prepend .facade {
+    color: #136bbd;
+}
+.ie8 #flow-fiv-state li.RUNNING .s-prepend .facade {
+    color: #136bbd;
+    font-weight: bold;
+}
+#flow-fiv-state li.RUNNING .s-prepend aside {
+    background-color: #84baee;
+    color: #ffffff;
+}
+#flow-fiv-state li.RUNNABLE .s-prepend .decorator {
+    color: #136bbd;
+}
+#flow-fiv-state li.NOTREADY .s-prepend .decorator {
+    color: #a3d3ff;
+}
+#quick-buttons button,
+.flow-button .decorator {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #84baee), color-stop(100%, #1578d4));
+    background-image: -webkit-linear-gradient(#84baee, #1578d4);
+    background-image: -moz-linear-gradient(#84baee, #1578d4);
+    background-image: -o-linear-gradient(#84baee, #1578d4);
+    background-image: linear-gradient(#84baee, #1578d4);
+    background-color: #1578d4;
+    border: 1px solid #136bbd;
+}
+#quick-buttons button,
+.flow-button .decorator, .flow-button aside.decorator {
+    color: #ffffff;
+}
+.flow-button.s-disabled .decorator {
+    color: #bfbfbf;
+}
+.save-button .decorator, .print-button .decorator {
+    border: 1px solid #136bbd;
+    color: #136bbd;
+}
+/******* Spaces ****/
+#space-watermark {
+    color: #f2f9ff;
+}
+#page-space#space-wrapper {
+    background: #f7fbff;
+}
+#page-space.phone{
+    background: #ffffff;
+}
+.space-content {
+    border: 1px solid #badeff;
+    background-color: #ffffff;
+}
+#space-menu ul li {
+    background-color: #f7fbff;
+    border-color: #badeff;
+}
+#space-menu ul ul li:hover,
+#space-menu ul ul li.current {
+    background-color: #f2f9ff;
+}
+#space-menu ul li,
+#space-menu ul li a,
+#wrapper #space-menu ul li a:link,
+#wrapper #space-menu ul li a:visited,
+#wrapper #space-menu ul li a:hover,
+#wrapper #space-menu ul li a:active,
+#wrapper #space-menu ul li ul li,
+#wrapper #space-menu ul li ul li span,
+#wrapper #space-menu ul li ul li a:link,
+#wrapper #space-menu ul li ul li a:visited,
+#wrapper #space-menu ul li ul li a:active {
+    color: #136bbd;
+}
+#space-menu ul ul li {
+    background-color: white;
+    background-image: none;
+    border-color: #badeff #badeff;
+    border-right: 1px solid #badeff;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+}
+#space-menu ul ul li.first,
+#space-menu ul ul ul li.first {
+    border-top: 1px solid #badeff;
+}
+.s-edit #bottom-workarea {
+    border: 1px solid #badeff;
+}
+#space-header {
+    background-color: #ffffff;
+}
+#space-container {
+    background: url("/frevvo/images/space/shadow.png") no-repeat scroll center top rgba(0, 0, 0, 0)
+}
+#space-container,  .s-edit #space-container .s-invisible {
+    background-color: #f7fbff;
+}
+
+/******* Task List ****/
+#threecolumn .app-table .task .a-name {
+    background: transparent;
+}
+#threecolumn #task-list-table .task.SUBMITTED,
+#threecolumn .app-table .task.SUBMITTED .a-name {
+    background: #bfffbf;
+}
+#threecolumn #task-list-table .task.ABORTED,
+#threecolumn .app-table .task.ABORTED .a-name {
+    background: #ffdfdf;
+}
+#threecolumn .app-table .task.s-selected .a-name,
+#threecolumn #task-list-table .s-selected {
+    background: #d9edff;
+}
+#threecolumn .app-table .a-from .task-from,
+#threecolumn .app-table .a-name .task-desc {
+    color: #0e3862;
+}
+.task-list-icon {
+    color: #84baee;
+}
+.icon-play.locked:before {
+    color: #d03232;
+}
+.icon-pencil.disabled:before,
+.icon-play.disabled:before {
+    color: #a3d3ff;
+}
+/* Audit trail */
+.task-info .EVEN {
+    background-color: transparent;
+}
+nav ul.ui-list li .right-item:before,
+.task-info .task-one-line .task-action {
+    color: #84baee;
+}
+/**** Used mainly on mobile ****/
+#wrapper nav ul.ui-list li,
+#wrapper nav ul.ui-list li a {
+    color: #1578d4;
+}
+.s-editing nav ul.ui-list li .left-item {
+    border-right: 1px solid #d9edff;
+}
+.ui-li-gradient.s-selected {
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff) to(#84baee)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #ffffff, #84baee); /* Chrome10+,Safari5.1+ */
+    background-image:    -moz-linear-gradient(top, #ffffff, #84baee); /* FF3.6+ */
+    background-image:     -ms-linear-gradient(#ffffff, #84baee); /* IE10 */
+    background-image:      -o-linear-gradient(top, #ffffff, #84baee); /* Opera 11.10+ */
+    background-image:         linear-gradient(top, #ffffff, #84baee); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#84baee'); /* IE6-9*/
+}
+nav ul.ui-list li {
+    border-bottom: 1px solid #d9edff;
+}
+nav ul.ui-list li a.menu-item::after {
+    border-right: 2px solid #84baee;
+    border-top: 2px solid #84baee;
+}
+ul.carousel li.carousel-item {
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.5), -1px -1px 2px rgba(255,255,255,1);
+}
+.ui-header-fixed {
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff) to(#f2f9ff));
+    background-image: -webkit-linear-gradient(top, #ffffff, #f2f9ff);
+    background-image:    -moz-linear-gradient(top, #ffffff, #f2f9ff);
+    background-image:     -ms-linear-gradient(#ffffff, #f2f9ff);
+    background-image:      -o-linear-gradient(top, #ffffff, #f2f9ff);
+    background-image:         linear-gradient(top, #ffffff, #f2f9ff);
+    border: 1px solid #d9edff;
+}
+.ui-btn-shadow {
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.36), 0 1px 0 rgba(0,0,0,0.25) inset !important;
+    -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.36), 0 1px 0 rgba(0,0,0,0.25) inset !important;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.36), 0 1px 0 rgba(0,0,0,0.25) inset !important;
+}
+.ui-shadow {
+    box-shadow: 0.2em 0.2em 0.2em #7b8085;
+}
+.ui-corner-all {
+    border: 1px solid #d9edff;
+}
+.ui-nav-button {
+    color: #ffffff;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #84baee), color-stop(100%, #1578d4));
+    background-image: -webkit-linear-gradient(#84baee, #1578d4);
+    background-image: -moz-linear-gradient(#84baee, #1578d4);
+    background-image: -o-linear-gradient(#84baee, #1578d4);
+    background-image: linear-gradient(#84baee, #1578d4);
+    border: 1px solid #136bbd;
+}
+#sw-nav-next.s-disabled,
+#sw-nav-back.s-disabled {
+    color: #bfbfbf;
+}
+.ui-bar {
+    color: #ffffff;
+    text-shadow: 0 1px 1px #335413;
+}
+.ui-bar.ui-message {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#008500), to(#269926)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(#008500, #269926); /* Chrome 10+, Saf5.1+ */
+    background-image:    -moz-linear-gradient(#008500, #269926); /* FF3.6 */
+    background-image:     -ms-linear-gradient(#008500, #269926); /* IE10 */
+    background-image:      -o-linear-gradient(#008500, #269926); /* Opera 11.10+ */
+    background-image:         linear-gradient(#008500, #269926);
+    border: 1px solid #269926;
+}
+.ui-bar.ui-error {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#a30008), to(#bc2f36)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(#a30008, #bc2f36); /* Chrome 10+, Saf5.1+ */
+    background-image:    -moz-linear-gradient(#a30008, #bc2f36); /* FF3.6 */
+    background-image:     -ms-linear-gradient(#a30008, #bc2f36); /* IE10 */
+    background-image:      -o-linear-gradient(#a30008, #bc2f36); /* Opera 11.10+ */
+    background-image:         linear-gradient(#a30008, #bc2f36);
+    border: 1px solid #bc2f36;
+}
+/* Mobile task list */
+.s-locked .a-from:before {
+    color: #3ca959;
+}
+.s-locked.s-locked-other .a-from:before {
+    color: #d03232;
+}
+/* Edit mode toolbar icons */
+#e-pilcrow-form {
+    color: #f8a18c;
+}
+.s-pilcrow #e-pilcrow-form,
+.e-toolbar-icon, .editor-icon {
+    color: #f15733 !important;
+}
+/* Edit mode palette icons */
+#page-form-edit.f-palette-item:before {
+    color: #7b8085;
+}
+
+.frevvo-form-container,
+.frevvo-form-container td {
+    /* This is a table row in the generated table that embeds a frevvo form (generated by Share ...) */
+    background-color: #ffffff;
+}
+#page-form #wrapper {
+    background-color: #ffffff;
+}
+.frevvo-form-popup-body .frevvo-form-container {
+    border-color: #ffffff;
+}

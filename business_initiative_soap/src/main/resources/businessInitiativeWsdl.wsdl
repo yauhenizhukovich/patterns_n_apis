@@ -1,0 +1,830 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org"
+                  targetNamespace="http://www.example.org">
+    <wsdl:types>
+        <xsd:schema xmlns="http://www.example.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+                    targetNamespace="http://www.example.org">
+            <xsd:import namespace="http://www.example.org" schemaLocation="businessInitiative.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="addConfirmCuratorByBusinessOfferRequest">
+        <wsdl:part element="tns:addConfirmCuratorByBusinessOfferRequest" name="addConfirmCuratorByBusinessOfferRequest"/>
+    </wsdl:message>
+    <wsdl:message name="addBankingProductCardRequest">
+        <wsdl:part element="tns:addBankingProductCardRequest" name="addBankingProductCardRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getApprovesHistoryByBusinessInitiativeResponse">
+        <wsdl:part element="tns:getApprovesHistoryByBusinessInitiativeResponse"
+                   name="getApprovesHistoryByBusinessInitiativeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updateBusinessOfferByIdRequest">
+        <wsdl:part element="tns:updateBusinessOfferByIdRequest" name="updateBusinessOfferByIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getListRecordByIdResponse">
+        <wsdl:part element="tns:getListRecordByIdResponse" name="getListRecordByIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getListRecordByIdRequest">
+        <wsdl:part element="tns:getListRecordByIdRequest" name="getListRecordByIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="addConfirmCuratorByBusinessOfferResponse">
+        <wsdl:part element="tns:addConfirmCuratorByBusinessOfferResponse" name="addConfirmCuratorByBusinessOfferResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addBusinessOfferResponse">
+        <wsdl:part element="tns:addBusinessOfferResponse" name="addBusinessOfferResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getMonitorProductReportByIdResponse">
+        <wsdl:part element="tns:getMonitorProductReportByIdResponse" name="getMonitorProductReportByIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updateBusinessInitiativeByIdRequest">
+        <wsdl:part element="tns:updateBusinessInitiativeByIdRequest" name="updateBusinessInitiativeByIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getConfirmHistoryByBusinessOfferRequest">
+        <wsdl:part element="tns:getConfirmHistoryByBusinessOfferRequest" name="getConfirmHistoryByBusinessOfferRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getBusinessOfferByIdRequest">
+        <wsdl:part element="tns:getBusinessOfferByIdRequest" name="getBusinessOfferByIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getPaybackAssessmentReportByIdResponse">
+        <wsdl:part element="tns:getPaybackAssessmentReportByIdResponse" name="getPaybackAssessmentReportByIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updatePaybackAssessmentReportByIdRequest">
+        <wsdl:part element="tns:updatePaybackAssessmentReportByIdRequest" name="updatePaybackAssessmentReportByIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="updateBusinessOfferByIdResponse">
+        <wsdl:part element="tns:updateBusinessOfferByIdResponse" name="updateBusinessOfferByIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getConfirmProductTeamHistoryByBusinessOfferResponse">
+        <wsdl:part element="tns:getConfirmProductTeamHistoryByBusinessOfferResponse"
+                   name="getConfirmProductTeamHistoryByBusinessOfferResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addPaybackAssessmentReportRequest">
+        <wsdl:part element="tns:addPaybackAssessmentReportRequest" name="addPaybackAssessmentReportRequest"/>
+    </wsdl:message>
+    <wsdl:message name="addConfirmByBusinessOfferRequest">
+        <wsdl:part element="tns:addConfirmByBusinessOfferRequest" name="addConfirmByBusinessOfferRequest"/>
+    </wsdl:message>
+    <wsdl:message name="addBusinessInitiativeResponse">
+        <wsdl:part element="tns:addBusinessInitiativeResponse" name="addBusinessInitiativeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updatePaybackAssessmentReportByIdResponse">
+        <wsdl:part element="tns:updatePaybackAssessmentReportByIdResponse" name="updatePaybackAssessmentReportByIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addMonitorProductReportResponse">
+        <wsdl:part element="tns:addMonitorProductReportResponse" name="addMonitorProductReportResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getBusinessInitiativeByIdResponse">
+        <wsdl:part element="tns:getBusinessInitiativeByIdResponse" name="getBusinessInitiativeByIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getApprovesHistoryByBusinessInitiativeRequest">
+        <wsdl:part element="tns:getApprovesHistoryByBusinessInitiativeRequest"
+                   name="getApprovesHistoryByBusinessInitiativeRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getPaybackAssessmentReportByIdRequest">
+        <wsdl:part element="tns:getPaybackAssessmentReportByIdRequest" name="getPaybackAssessmentReportByIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getApproveHistoryByBusinessOfferResponse">
+        <wsdl:part element="tns:getApproveHistoryByBusinessOfferResponse" name="getApproveHistoryByBusinessOfferResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addOpinionByBusinessOfferResponse">
+        <wsdl:part element="tns:addOpinionByBusinessOfferResponse" name="addOpinionByBusinessOfferResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getMonitorProductReportByIdRequest">
+        <wsdl:part element="tns:getMonitorProductReportByIdRequest" name="getMonitorProductReportByIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="addConfirmCuratorByBusinessInitiativeRequest">
+        <wsdl:part element="tns:addConfirmCuratorByBusinessInitiativeRequest"
+                   name="addConfirmCuratorByBusinessInitiativeRequest"/>
+    </wsdl:message>
+    <wsdl:message name="addBankingProductCardResponse">
+        <wsdl:part element="tns:addBankingProductCardResponse" name="addBankingProductCardResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getBankingProductCardByIdRequest">
+        <wsdl:part element="tns:getBankingProductCardByIdRequest" name="getBankingProductCardByIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getBusinessInitiativeByIdRequest">
+        <wsdl:part element="tns:getBusinessInitiativeByIdRequest" name="getBusinessInitiativeByIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="updateBusinessInitiativeByIdResponse">
+        <wsdl:part element="tns:updateBusinessInitiativeByIdResponse" name="updateBusinessInitiativeByIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addConfirmByBusinessInitiativeRequest">
+        <wsdl:part element="tns:addConfirmByBusinessInitiativeRequest" name="addConfirmByBusinessInitiativeRequest"/>
+    </wsdl:message>
+    <wsdl:message name="addBusinessInitiativeRequest">
+        <wsdl:part element="tns:addBusinessInitiativeRequest" name="addBusinessInitiativeRequest"/>
+    </wsdl:message>
+    <wsdl:message name="addBusinessOfferRequest">
+        <wsdl:part element="tns:addBusinessOfferRequest" name="addBusinessOfferRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getConfirmProductTeamHistoryByBusinessOfferRequest">
+        <wsdl:part element="tns:getConfirmProductTeamHistoryByBusinessOfferRequest"
+                   name="getConfirmProductTeamHistoryByBusinessOfferRequest"/>
+    </wsdl:message>
+    <wsdl:message name="updateMonitorProductReportByIdRequest">
+        <wsdl:part element="tns:updateMonitorProductReportByIdRequest" name="updateMonitorProductReportByIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getConfirmCuratorHistoryByBusinessInitiativeRequest">
+        <wsdl:part element="tns:getConfirmCuratorHistoryByBusinessInitiativeRequest"
+                   name="getConfirmCuratorHistoryByBusinessInitiativeRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getConfirmHistoryByBusinessInitiativeRequest">
+        <wsdl:part element="tns:getConfirmHistoryByBusinessInitiativeRequest"
+                   name="getConfirmHistoryByBusinessInitiativeRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getConfirmHistoryByBusinessOfferResponse">
+        <wsdl:part element="tns:getConfirmHistoryByBusinessOfferResponse" name="getConfirmHistoryByBusinessOfferResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getChangesHistoryByBusinessInitiativeRequest">
+        <wsdl:part element="tns:getChangesHistoryByBusinessInitiativeRequest"
+                   name="getChangesHistoryByBusinessInitiativeRequest"/>
+    </wsdl:message>
+    <wsdl:message name="addConfirmByBusinessInitiativeResponse">
+        <wsdl:part element="tns:addConfirmByBusinessInitiativeResponse" name="addConfirmByBusinessInitiativeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addFamiliarizeByBusinessInitiativeResponse">
+        <wsdl:part element="tns:addFamiliarizeByBusinessInitiativeResponse" name="addFamiliarizeByBusinessInitiativeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addApproveByBusinessOfferResponse">
+        <wsdl:part element="tns:addApproveByBusinessOfferResponse" name="addApproveByBusinessOfferResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addApproveByBusinessInitiativeResponse">
+        <wsdl:part element="tns:addApproveByBusinessInitiativeResponse" name="addApproveByBusinessInitiativeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addFamiliarizeByBusinessInitiativeRequest">
+        <wsdl:part element="tns:addFamiliarizeByBusinessInitiativeRequest" name="addFamiliarizeByBusinessInitiativeRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getOpinionHistoryByBusinessOfferResponse">
+        <wsdl:part element="tns:getOpinionHistoryByBusinessOfferResponse" name="getOpinionHistoryByBusinessOfferResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addConfirmProductTeamByBusinessOfferRequest">
+        <wsdl:part element="tns:addConfirmProductTeamByBusinessOfferRequest" name="addConfirmProductTeamByBusinessOfferRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getListRecordsByPreliminaryMonitoringTermResponse">
+        <wsdl:part element="tns:getListRecordsByPreliminaryMonitoringTermResponse"
+                   name="getListRecordsByPreliminaryMonitoringTermResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getListRecordsByPreliminaryMonitoringTermRequest">
+        <wsdl:part element="tns:getListRecordsByPreliminaryMonitoringTermRequest" name="getListRecordsByPreliminaryMonitoringTermRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getComplexObjectByRecordIdRequest">
+        <wsdl:part element="tns:getComplexObjectByRecordIdRequest"
+                   name="getComplexObjectByRecordIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getComplexObjectByRecordIdResponse">
+        <wsdl:part element="tns:getComplexObjectByRecordIdResponse" name="getComplexObjectByRecordIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getListRecordsByProfitabilityResponse">
+        <wsdl:part element="tns:getListRecordsByProfitabilityResponse" name="getListRecordsByProfitabilityResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getListRecordsByProfitabilityRequest">
+        <wsdl:part element="tns:getListRecordsByProfitabilityRequest" name="getListRecordsByProfitabilityRequest"/>
+    </wsdl:message>
+    <wsdl:message name="addOpinionByBusinessOfferRequest">
+        <wsdl:part element="tns:addOpinionByBusinessOfferRequest" name="addOpinionByBusinessOfferRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getFamiliarizeHistoryByBusinessInitiativeRequest">
+        <wsdl:part element="tns:getFamiliarizeHistoryByBusinessInitiativeRequest"
+                   name="getFamiliarizeHistoryByBusinessInitiativeRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getBusinessOfferByIdResponse">
+        <wsdl:part element="tns:getBusinessOfferByIdResponse" name="getBusinessOfferByIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getConfirmCuratorHistoryByBusinessOfferRequest">
+        <wsdl:part element="tns:getConfirmCuratorHistoryByBusinessOfferRequest"
+                   name="getConfirmCuratorHistoryByBusinessOfferRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getConfirmHistoryByBusinessInitiativeResponse">
+        <wsdl:part element="tns:getConfirmHistoryByBusinessInitiativeResponse"
+                   name="getConfirmHistoryByBusinessInitiativeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getApproveHistoryByBusinessOfferRequest">
+        <wsdl:part element="tns:getApproveHistoryByBusinessOfferRequest" name="getApproveHistoryByBusinessOfferRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getBankingProductCardByIdResponse">
+        <wsdl:part element="tns:getBankingProductCardByIdResponse" name="getBankingProductCardByIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addConfirmCuratorByBusinessInitiativeResponse">
+        <wsdl:part element="tns:addConfirmCuratorByBusinessInitiativeResponse"
+                   name="addConfirmCuratorByBusinessInitiativeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addConfirmByBusinessOfferResponse">
+        <wsdl:part element="tns:addConfirmByBusinessOfferResponse" name="addConfirmByBusinessOfferResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getWeblogicUsersResponse">
+        <wsdl:part element="tns:getWeblogicUsersResponse" name="getWeblogicUsersResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updateBankingProductCardByIdRequest">
+        <wsdl:part element="tns:updateBankingProductCardByIdRequest" name="updateBankingProductCardByIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="updateBankingProductCardByIdResponse">
+        <wsdl:part element="tns:updateBankingProductCardByIdResponse" name="updateBankingProductCardByIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getBusinessInitiativesListRequest">
+        <wsdl:part element="tns:getBusinessInitiativesListRequest" name="getBusinessInitiativesListRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getBusinessInitiativesListResponse">
+        <wsdl:part element="tns:getBusinessInitiativesListResponse" name="getBusinessInitiativesListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updateMonitorProductReportByIdResponse">
+        <wsdl:part element="tns:updateMonitorProductReportByIdResponse" name="updateMonitorProductReportByIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getConfirmCuratorHistoryByBusinessOfferResponse">
+        <wsdl:part element="tns:getConfirmCuratorHistoryByBusinessOfferResponse"
+                   name="getConfirmCuratorHistoryByBusinessOfferResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addPaybackAssessmentReportResponse">
+        <wsdl:part element="tns:addPaybackAssessmentReportResponse" name="addPaybackAssessmentReportResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getWeblogicUsersRequest">
+        <wsdl:part element="tns:getWeblogicUsersRequest" name="getWeblogicUsersRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getOpinionHistoryByBusinessOfferRequest">
+        <wsdl:part element="tns:getOpinionHistoryByBusinessOfferRequest" name="getOpinionHistoryByBusinessOfferRequest"/>
+    </wsdl:message>
+    <wsdl:message name="addConfirmProductTeamByBusinessOfferResponse">
+        <wsdl:part element="tns:addConfirmProductTeamByBusinessOfferResponse"
+                   name="addConfirmProductTeamByBusinessOfferResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getConfirmCuratorHistoryByBusinessInitiativeResponse">
+        <wsdl:part element="tns:getConfirmCuratorHistoryByBusinessInitiativeResponse"
+                   name="getConfirmCuratorHistoryByBusinessInitiativeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addMonitorProductReportRequest">
+        <wsdl:part element="tns:addMonitorProductReportRequest" name="addMonitorProductReportRequest"/>
+    </wsdl:message>
+    <wsdl:message name="addApproveByBusinessInitiativeRequest">
+        <wsdl:part element="tns:addApproveByBusinessInitiativeRequest" name="addApproveByBusinessInitiativeRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getFamiliarizeHistoryByBusinessInitiativeResponse">
+        <wsdl:part element="tns:getFamiliarizeHistoryByBusinessInitiativeResponse"
+                   name="getFamiliarizeHistoryByBusinessInitiativeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addApproveByBusinessOfferRequest">
+        <wsdl:part element="tns:addApproveByBusinessOfferRequest" name="addApproveByBusinessOfferRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getChangesHistoryByBusinessInitiativeResponse">
+        <wsdl:part element="tns:getChangesHistoryByBusinessInitiativeResponse"
+                   name="getChangesHistoryByBusinessInitiativeResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="BusinessInitiativePort">
+        <wsdl:operation name="addConfirmCuratorByBusinessOffer">
+            <wsdl:input message="tns:addConfirmCuratorByBusinessOfferRequest" name="addConfirmCuratorByBusinessOfferRequest"/>
+            <wsdl:output message="tns:addConfirmCuratorByBusinessOfferResponse"
+                         name="addConfirmCuratorByBusinessOfferResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getListRecordsByPreliminaryMonitoringTerm">
+            <wsdl:input message="tns:getListRecordsByPreliminaryMonitoringTermRequest"
+                        name="getListRecordsByPreliminaryMonitoringTermRequest"/>
+            <wsdl:output message="tns:getListRecordsByPreliminaryMonitoringTermResponse"
+                         name="getListRecordsByPreliminaryMonitoringTermResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getComplexObjectByRecordId">
+            <wsdl:input message="tns:getComplexObjectByRecordIdRequest"
+                        name="getComplexObjectByRecordIdRequest"/>
+            <wsdl:output message="tns:getComplexObjectByRecordIdResponse"
+                         name="getComplexObjectByRecordIdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getListRecordsByProfitability">
+            <wsdl:input message="tns:getListRecordsByProfitabilityRequest" name="getListRecordsByProfitabilityRequest"/>
+            <wsdl:output message="tns:getListRecordsByProfitabilityResponse"
+                         name="getListRecordsByProfitabilityResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addBankingProductCard">
+            <wsdl:input message="tns:addBankingProductCardRequest" name="addBankingProductCardRequest"/>
+            <wsdl:output message="tns:addBankingProductCardResponse" name="addBankingProductCardResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getApprovesHistoryByBusinessInitiative">
+            <wsdl:input message="tns:getApprovesHistoryByBusinessInitiativeRequest"
+                        name="getApprovesHistoryByBusinessInitiativeRequest"/>
+            <wsdl:output message="tns:getApprovesHistoryByBusinessInitiativeResponse"
+                         name="getApprovesHistoryByBusinessInitiativeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateBusinessOfferById">
+            <wsdl:input message="tns:updateBusinessOfferByIdRequest" name="updateBusinessOfferByIdRequest"/>
+            <wsdl:output message="tns:updateBusinessOfferByIdResponse" name="updateBusinessOfferByIdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addBusinessOffer">
+            <wsdl:input message="tns:addBusinessOfferRequest" name="addBusinessOfferRequest"/>
+            <wsdl:output message="tns:addBusinessOfferResponse" name="addBusinessOfferResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getMonitorProductReportById">
+            <wsdl:input message="tns:getMonitorProductReportByIdRequest" name="getMonitorProductReportByIdRequest"/>
+            <wsdl:output message="tns:getMonitorProductReportByIdResponse" name="getMonitorProductReportByIdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateBusinessInitiativeById">
+            <wsdl:input message="tns:updateBusinessInitiativeByIdRequest" name="updateBusinessInitiativeByIdRequest"/>
+            <wsdl:output message="tns:updateBusinessInitiativeByIdResponse" name="updateBusinessInitiativeByIdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConfirmHistoryByBusinessOffer">
+            <wsdl:input message="tns:getConfirmHistoryByBusinessOfferRequest" name="getConfirmHistoryByBusinessOfferRequest"/>
+            <wsdl:output message="tns:getConfirmHistoryByBusinessOfferResponse"
+                         name="getConfirmHistoryByBusinessOfferResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBusinessOfferById">
+            <wsdl:input message="tns:getBusinessOfferByIdRequest" name="getBusinessOfferByIdRequest"/>
+            <wsdl:output message="tns:getBusinessOfferByIdResponse" name="getBusinessOfferByIdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPaybackAssessmentReportById">
+            <wsdl:input message="tns:getPaybackAssessmentReportByIdRequest" name="getPaybackAssessmentReportByIdRequest"/>
+            <wsdl:output message="tns:getPaybackAssessmentReportByIdResponse" name="getPaybackAssessmentReportByIdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="updatePaybackAssessmentReportById">
+            <wsdl:input message="tns:updatePaybackAssessmentReportByIdRequest" name="updatePaybackAssessmentReportByIdRequest"/>
+            <wsdl:output message="tns:updatePaybackAssessmentReportByIdResponse"
+                         name="updatePaybackAssessmentReportByIdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getListRecordById">
+            <wsdl:input message="tns:getListRecordByIdRequest" name="getListRecordByIdRequest"/>
+            <wsdl:output message="tns:getListRecordByIdResponse"
+                         name="getListRecordByIdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConfirmProductTeamHistoryByBusinessOffer">
+            <wsdl:input message="tns:getConfirmProductTeamHistoryByBusinessOfferRequest"
+                        name="getConfirmProductTeamHistoryByBusinessOfferRequest"/>
+            <wsdl:output message="tns:getConfirmProductTeamHistoryByBusinessOfferResponse"
+                         name="getConfirmProductTeamHistoryByBusinessOfferResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addPaybackAssessmentReport">
+            <wsdl:input message="tns:addPaybackAssessmentReportRequest" name="addPaybackAssessmentReportRequest"/>
+            <wsdl:output message="tns:addPaybackAssessmentReportResponse" name="addPaybackAssessmentReportResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addConfirmByBusinessOffer">
+            <wsdl:input message="tns:addConfirmByBusinessOfferRequest" name="addConfirmByBusinessOfferRequest"/>
+            <wsdl:output message="tns:addConfirmByBusinessOfferResponse" name="addConfirmByBusinessOfferResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addBusinessInitiative">
+            <wsdl:input message="tns:addBusinessInitiativeRequest" name="addBusinessInitiativeRequest"/>
+            <wsdl:output message="tns:addBusinessInitiativeResponse" name="addBusinessInitiativeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addMonitorProductReport">
+            <wsdl:input message="tns:addMonitorProductReportRequest" name="addMonitorProductReportRequest"/>
+            <wsdl:output message="tns:addMonitorProductReportResponse" name="addMonitorProductReportResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBusinessInitiativeById">
+            <wsdl:input message="tns:getBusinessInitiativeByIdRequest" name="getBusinessInitiativeByIdRequest"/>
+            <wsdl:output message="tns:getBusinessInitiativeByIdResponse" name="getBusinessInitiativeByIdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getApproveHistoryByBusinessOffer">
+            <wsdl:input message="tns:getApproveHistoryByBusinessOfferRequest" name="getApproveHistoryByBusinessOfferRequest"/>
+            <wsdl:output message="tns:getApproveHistoryByBusinessOfferResponse"
+                         name="getApproveHistoryByBusinessOfferResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addOpinionByBusinessOffer">
+            <wsdl:input message="tns:addOpinionByBusinessOfferRequest" name="addOpinionByBusinessOfferRequest"/>
+            <wsdl:output message="tns:addOpinionByBusinessOfferResponse" name="addOpinionByBusinessOfferResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addConfirmCuratorByBusinessInitiative">
+            <wsdl:input message="tns:addConfirmCuratorByBusinessInitiativeRequest"
+                        name="addConfirmCuratorByBusinessInitiativeRequest"/>
+            <wsdl:output message="tns:addConfirmCuratorByBusinessInitiativeResponse"
+                         name="addConfirmCuratorByBusinessInitiativeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBankingProductCardById">
+            <wsdl:input message="tns:getBankingProductCardByIdRequest" name="getBankingProductCardByIdRequest"/>
+            <wsdl:output message="tns:getBankingProductCardByIdResponse" name="getBankingProductCardByIdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addConfirmByBusinessInitiative">
+            <wsdl:input message="tns:addConfirmByBusinessInitiativeRequest" name="addConfirmByBusinessInitiativeRequest"/>
+            <wsdl:output message="tns:addConfirmByBusinessInitiativeResponse" name="addConfirmByBusinessInitiativeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateMonitorProductReportById">
+            <wsdl:input message="tns:updateMonitorProductReportByIdRequest" name="updateMonitorProductReportByIdRequest"/>
+            <wsdl:output message="tns:updateMonitorProductReportByIdResponse" name="updateMonitorProductReportByIdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConfirmCuratorHistoryByBusinessInitiative">
+            <wsdl:input message="tns:getConfirmCuratorHistoryByBusinessInitiativeRequest"
+                        name="getConfirmCuratorHistoryByBusinessInitiativeRequest"/>
+            <wsdl:output message="tns:getConfirmCuratorHistoryByBusinessInitiativeResponse"
+                         name="getConfirmCuratorHistoryByBusinessInitiativeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConfirmHistoryByBusinessInitiative">
+            <wsdl:input message="tns:getConfirmHistoryByBusinessInitiativeRequest"
+                        name="getConfirmHistoryByBusinessInitiativeRequest"/>
+            <wsdl:output message="tns:getConfirmHistoryByBusinessInitiativeResponse"
+                         name="getConfirmHistoryByBusinessInitiativeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getChangesHistoryByBusinessInitiative">
+            <wsdl:input message="tns:getChangesHistoryByBusinessInitiativeRequest"
+                        name="getChangesHistoryByBusinessInitiativeRequest"/>
+            <wsdl:output message="tns:getChangesHistoryByBusinessInitiativeResponse"
+                         name="getChangesHistoryByBusinessInitiativeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addFamiliarizeByBusinessInitiative">
+            <wsdl:input message="tns:addFamiliarizeByBusinessInitiativeRequest"
+                        name="addFamiliarizeByBusinessInitiativeRequest"/>
+            <wsdl:output message="tns:addFamiliarizeByBusinessInitiativeResponse"
+                         name="addFamiliarizeByBusinessInitiativeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addApproveByBusinessOffer">
+            <wsdl:input message="tns:addApproveByBusinessOfferRequest" name="addApproveByBusinessOfferRequest"/>
+            <wsdl:output message="tns:addApproveByBusinessOfferResponse" name="addApproveByBusinessOfferResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addApproveByBusinessInitiative">
+            <wsdl:input message="tns:addApproveByBusinessInitiativeRequest" name="addApproveByBusinessInitiativeRequest"/>
+            <wsdl:output message="tns:addApproveByBusinessInitiativeResponse" name="addApproveByBusinessInitiativeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOpinionHistoryByBusinessOffer">
+            <wsdl:input message="tns:getOpinionHistoryByBusinessOfferRequest" name="getOpinionHistoryByBusinessOfferRequest"/>
+            <wsdl:output message="tns:getOpinionHistoryByBusinessOfferResponse"
+                         name="getOpinionHistoryByBusinessOfferResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addConfirmProductTeamByBusinessOffer">
+            <wsdl:input message="tns:addConfirmProductTeamByBusinessOfferRequest"
+                        name="addConfirmProductTeamByBusinessOfferRequest"/>
+            <wsdl:output message="tns:addConfirmProductTeamByBusinessOfferResponse"
+                         name="addConfirmProductTeamByBusinessOfferResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getFamiliarizeHistoryByBusinessInitiative">
+            <wsdl:input message="tns:getFamiliarizeHistoryByBusinessInitiativeRequest"
+                        name="getFamiliarizeHistoryByBusinessInitiativeRequest"/>
+            <wsdl:output message="tns:getFamiliarizeHistoryByBusinessInitiativeResponse"
+                         name="getFamiliarizeHistoryByBusinessInitiativeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConfirmCuratorHistoryByBusinessOffer">
+            <wsdl:input message="tns:getConfirmCuratorHistoryByBusinessOfferRequest"
+                        name="getConfirmCuratorHistoryByBusinessOfferRequest"/>
+            <wsdl:output message="tns:getConfirmCuratorHistoryByBusinessOfferResponse"
+                         name="getConfirmCuratorHistoryByBusinessOfferResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getWeblogicUsers">
+            <wsdl:input message="tns:getWeblogicUsersRequest" name="getWeblogicUsersRequest"/>
+            <wsdl:output message="tns:getWeblogicUsersResponse" name="getWeblogicUsersResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBusinessInitiativesList">
+            <wsdl:input message="tns:getBusinessInitiativesListRequest" name="getBusinessInitiativesListRequest"/>
+            <wsdl:output message="tns:getBusinessInitiativesListResponse" name="getBusinessInitiativesListResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateBankingProductCardById">
+            <wsdl:input message="tns:updateBankingProductCardByIdRequest" name="updateBankingProductCardByIdRequest"/>
+            <wsdl:output message="tns:updateBankingProductCardByIdResponse" name="updateBankingProductCardByIdResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="BusinessInitiativePortSoap11" type="tns:BusinessInitiativePort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="addConfirmCuratorByBusinessOffer">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addConfirmCuratorByBusinessOfferRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addConfirmCuratorByBusinessOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addBankingProductCard">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addBankingProductCardRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addBankingProductCardResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListRecordsByPreliminaryMonitoringTerm">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getListRecordsByPreliminaryMonitoringTermRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getListRecordsByPreliminaryMonitoringTermResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListRecordById">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getListRecordByIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getListRecordByIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getComplexObjectByRecordId">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getComplexObjectByRecordIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getComplexObjectByRecordIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListRecordsByProfitability">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getListRecordsByProfitabilityRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getListRecordsByProfitabilityResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getApprovesHistoryByBusinessInitiative">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getApprovesHistoryByBusinessInitiativeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getApprovesHistoryByBusinessInitiativeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateBusinessOfferById">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="updateBusinessOfferByIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updateBusinessOfferByIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addBusinessOffer">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addBusinessOfferRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addBusinessOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMonitorProductReportById">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getMonitorProductReportByIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getMonitorProductReportByIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateBusinessInitiativeById">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="updateBusinessInitiativeByIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updateBusinessInitiativeByIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConfirmHistoryByBusinessOffer">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getConfirmHistoryByBusinessOfferRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getConfirmHistoryByBusinessOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBusinessOfferById">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getBusinessOfferByIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getBusinessOfferByIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPaybackAssessmentReportById">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getPaybackAssessmentReportByIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getPaybackAssessmentReportByIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updatePaybackAssessmentReportById">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="updatePaybackAssessmentReportByIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updatePaybackAssessmentReportByIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConfirmProductTeamHistoryByBusinessOffer">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getConfirmProductTeamHistoryByBusinessOfferRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getConfirmProductTeamHistoryByBusinessOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addPaybackAssessmentReport">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addPaybackAssessmentReportRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addPaybackAssessmentReportResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addConfirmByBusinessOffer">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addConfirmByBusinessOfferRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addConfirmByBusinessOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addBusinessInitiative">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addBusinessInitiativeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addBusinessInitiativeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addMonitorProductReport">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addMonitorProductReportRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addMonitorProductReportResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBusinessInitiativeById">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getBusinessInitiativeByIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getBusinessInitiativeByIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getApproveHistoryByBusinessOffer">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getApproveHistoryByBusinessOfferRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getApproveHistoryByBusinessOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addOpinionByBusinessOffer">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addOpinionByBusinessOfferRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addOpinionByBusinessOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addConfirmCuratorByBusinessInitiative">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addConfirmCuratorByBusinessInitiativeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addConfirmCuratorByBusinessInitiativeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBankingProductCardById">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getBankingProductCardByIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getBankingProductCardByIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addConfirmByBusinessInitiative">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addConfirmByBusinessInitiativeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addConfirmByBusinessInitiativeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateMonitorProductReportById">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="updateMonitorProductReportByIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updateMonitorProductReportByIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConfirmCuratorHistoryByBusinessInitiative">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getConfirmCuratorHistoryByBusinessInitiativeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getConfirmCuratorHistoryByBusinessInitiativeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConfirmHistoryByBusinessInitiative">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getConfirmHistoryByBusinessInitiativeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getConfirmHistoryByBusinessInitiativeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getChangesHistoryByBusinessInitiative">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getChangesHistoryByBusinessInitiativeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getChangesHistoryByBusinessInitiativeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addFamiliarizeByBusinessInitiative">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addFamiliarizeByBusinessInitiativeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addFamiliarizeByBusinessInitiativeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addApproveByBusinessOffer">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addApproveByBusinessOfferRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addApproveByBusinessOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addApproveByBusinessInitiative">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addApproveByBusinessInitiativeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addApproveByBusinessInitiativeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOpinionHistoryByBusinessOffer">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getOpinionHistoryByBusinessOfferRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getOpinionHistoryByBusinessOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addConfirmProductTeamByBusinessOffer">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="addConfirmProductTeamByBusinessOfferRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="addConfirmProductTeamByBusinessOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getFamiliarizeHistoryByBusinessInitiative">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getFamiliarizeHistoryByBusinessInitiativeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getFamiliarizeHistoryByBusinessInitiativeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConfirmCuratorHistoryByBusinessOffer">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getConfirmCuratorHistoryByBusinessOfferRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getConfirmCuratorHistoryByBusinessOfferResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getWeblogicUsers">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getWeblogicUsersRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getWeblogicUsersResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBusinessInitiativesList">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getBusinessInitiativesListRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getBusinessInitiativesListResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateBankingProductCardById">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="updateBankingProductCardByIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updateBankingProductCardByIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="BusinessInitiativePortService">
+        <wsdl:port binding="tns:BusinessInitiativePortSoap11" name="BusinessInitiativePortSoap11">
+            <soap:address location="http://soabpm-server:7004/businessinitiatives/v1"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

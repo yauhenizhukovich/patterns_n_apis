@@ -1,0 +1,147 @@
+curl --location --request POST 'http://soabpm-server:7007/BarsMicroServiceBusProject/BarsMicroCrmProxyService/dimensions' \
+--header 'Authorization: Basic d2VibG9naWM6d2VsY29tZTE=' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "code": "12102014RUB",
+  "name": "ON-LINE 30 ? ?????????? ??????",
+  "dimType": "URDEP",
+  "userCode": "xodorcova_ei@belinvestbank.by",
+  "attributes": {
+    "DEP_PROC_DECREASE_STAV": {
+      "name": "DEP_PROC_DECREASE_STAV",
+      "value": "50"
+    },
+    "DEP_VID_PROC_STAV": {
+      "name": "DEP_VID_PROC_STAV",
+      "value": "70276"
+    },
+    "DEP_SUMBL": {
+      "name": "DEP_SUMBL",
+      "value": "0"
+    },
+    "DEP_SROK": {
+      "name": "DEP_SROK",
+      "value": "\u003d30"
+    },
+    "DEP_TYPE": {
+      "name": "DEP_TYPE",
+      "value": "70237"
+    },
+    "DEP_SR_VOZVRAT": {
+      "name": "DEP_SR_VOZVRAT",
+      "value": "0"
+    },
+    "DEP_POROG_SUM": {
+      "name": "DEP_POROG_SUM",
+      "value": "null"
+    },
+    "DEP_SUM_SPIS": {
+      "name": "DEP_SUM_SPIS",
+      "value": "null"
+    },
+    "DEP_MAX_SROK": {
+      "name": "DEP_MAX_SROK",
+      "value": "null"
+    },
+    "DEP_STAV_SPIS": {
+      "name": "DEP_STAV_SPIS",
+      "value": "1"
+    },
+    "DEP_USL_RASTOR": {
+      "name": "DEP_USL_RASTOR",
+      "value": "0"
+    },
+    "DEP_BLOC": {
+      "name": "DEP_BLOC",
+      "value": "0"
+    },
+    "DEP_SUMDOG": {
+      "name": "DEP_SUMDOG",
+      "value": "null"
+    },
+    "DEP_ALLOW_ADDITION": {
+      "name": "DEP_ALLOW_ADDITION",
+      "value": "null"
+    },
+    "DEP_BAN_DEYS": {
+      "name": "DEP_BAN_DEYS",
+      "value": "null"
+    },
+    "DEP_STAV_RAST": {
+      "name": "DEP_STAV_RAST",
+      "value": "1192849"
+    },
+    "DEP_STAVKA": {
+      "name": "DEP_STAVKA",
+      "value": "null"
+    },
+    "DEP_GOAL": {
+      "name": "DEP_GOAL",
+      "value": "null"
+    },
+    "DEP_SHKALA_STAV": {
+      "name": "DEP_SHKALA_STAV",
+      "value": "null"
+    },
+    "DEP_KOL": {
+      "name": "DEP_KOL",
+      "value": "0"
+    },
+    "DEP_TYPE_NACH_PROC": {
+      "name": "DEP_TYPE_NACH_PROC",
+      "value": "0"
+    },
+    "DEP_PROC_RAST": {
+      "name": "DEP_PROC_RAST",
+      "value": "48.91"
+    },
+    "DEP_MAX_STAV": {
+      "name": "DEP_MAX_STAV",
+      "value": "null"
+    },
+    "DEP_MAX_LIMIT": {
+      "name": "DEP_MAX_LIMIT",
+      "value": "null"
+    },
+    "DEP_PROC_TAKE_ALLOW": {
+      "name": "DEP_PROC_TAKE_ALLOW",
+      "value": "null"
+    },
+    "DEP_MIN_SROK": {
+      "name": "DEP_MIN_SROK",
+      "value": "null"
+    },
+    "DEP_STAV_RAST_VAL": {
+      "name": "DEP_STAV_RAST_VAL",
+      "value": "null"
+    },
+    "DEP_SROK_WAIT_RETURN": {
+      "name": "DEP_SROK_WAIT_RETURN",
+      "value": "null"
+    },
+    "DEP_LIMIT": {
+      "name": "DEP_LIMIT",
+      "value": "0"
+    },
+    "DEP_TYPE_CONTRACT": {
+      "name": "DEP_TYPE_CONTRACT",
+      "value": "1"
+    },
+    "DEP_ADDITIONAL_INCOME": {
+      "name": "DEP_ADDITIONAL_INCOME",
+      "value": "0"
+    },
+    "DEP_KONTR_MAX_STAV": {
+      "name": "DEP_KONTR_MAX_STAV",
+      "value": "null"
+    },
+    "DEP_CURRENCY": {
+      "name": "DEP_CURRENCY",
+      "value": "67778"
+    },
+    "DEP_STAV_POROG": {
+      "name": "DEP_STAV_POROG",
+      "value": "null"
+    }
+  }
+}'

@@ -1,0 +1,222 @@
+Путь к WSDL и XSD файлам для работы с сервисом:
+http://soabpm-server:7004/businessinitiatives/v1/businessInitiativeWsdl.wsdl
+http://soabpm-server:7004/businessinitiatives/v1/businessInitiative.xsd
+[business_initiative_SOAP_v1]
+
+Расположение файлов в GitLab:
+https://git.compit.by/belinvestbank/sources/-/blob/master/Catalog/Services/business_initiative_soap/src/main/resources/businessInitiativeWsdl.wsdl
+https://git.compit.by/belinvestbank/sources/-/blob/master/Catalog/Services/business_initiative_soap/src/main/resources/businessInitiative.xsd
+
+По вопросам обращайтесь в Skype: live:.cid.20ce3fa35aedcdc8
+
+Сервис имеет следующие методы: 
+  
+  --------------------------------------------------- РАБОТА С БИЗНЕС-ИНИЦИАТИВОЙ -------------------------------------------------------
+  
+	- addBusinessInitiative - добавление бизнес-инициативы
+		запрос: - addBusinessInitiativeRequest - принимает параметр "businessInitiative" типа TBusinessInitiative
+		ответ:  - addBusinessInitiativeResponse - возвращает поле "businessInitiativeId", которое содержит ID добавленной бизнес-инициативы
+	
+	- getBusinessInitiativeById - получение бизнес-инициативы по ID
+		запрос: - getBusinessInitiativeByIdRequest - принимает параметр "businessInitiativeId" типа Long
+		ответ:  - getBusinessInitiativeByIdResponse - возвращает объект "businessInitiative" бизнес-инициативы
+	
+	- updateBusinessInitiativeById - обновление бизнес-инициативы по ID
+		запрос: - updateBusinessInitiativeByIdRequest - принимает параметр "businessInitiative" типа TBusinessInitiative и 
+		"businessInitiativeId" - ID обновляемой инициативы
+		ответ:  - updateBusinessInitiativeByIdResponse - возвращает поле "message" о удачном обновлении бизнес-инициативы
+	
+	- addApproveByBusinessInitiative - добавление утверждения(утверждений) по ID бизнес-инициативы
+		запрос: - addApproveByBusinessInitiativeRequest - принимает параметры "businessInitiativeId" типа Long и "approve" типа TOnDevelopmentRec, 
+		содержащий поля:
+							 - String DeptName - название подразделения разработчика,
+							 - String EmpPosition - должность разработчика,
+							 - String EmpName - ФИО разработчика,
+							 - String EmpLogin - логин разработчика,
+							 - String Result - результат фазы,
+							 - Date DateTo - дата назначенной обработки фазы,
+							 - Date DateNom - реальная дата обработки фазы,
+							 - String Comment - комментарий,
+							 - String DLG_DeptName - те же параметры новой фазы делегирования
+							 - String DLG_EmpPosition - // -
+							 - String DLG_EmpName - // -
+							 - String DLG_EmpLogin - // -
+							 - String DLG_Result - // -
+							 - Date DLG_DateTo - // -
+							 - Date DLG_DateNom - // -
+							 - String DLG_Comment - // -
+		ПРИМЕЧАНИЕ: ПРИ ДОБАВЛЕНИИ ОПЕРАЦИИ ДЕЛЕГИРОВАНИЯ ЗНАЧЕНИЯ ПОЛЕЙ DeptName, EmpPosition, EmpName, EmpLogin, Result, DateTo, DateNom, Comment
+		ДОЛЖНЫ СОВПАДАТЬ С ПОЛЯМИ DLG_DeptName, DLG_EmpPosition, DLG_EmpName, DLG_EmpLogin, DLG_Result, DLG_DateTo, DLG_DateNom ПРЕДШЕСТВУЮЩЕЙ ОПЕРАЦИИ
+		ДЕЛЕГИРОВАНИЯ СООТВЕТСТВЕННО.
+		ответ:  - addApproveByBusinessInitiativeResponse
+	
+	- getApprovesHistoryByBusinessInitiative - получение истории утверждений по ID бизнес-инициативы
+	    запрос: - getApprovesHistoryByBusinessInitiativeRequest - принимает параметр "businessInitiativeId" типа Long
+		ответ:  - getApprovesHistoryByBusinessInitiativeResponse - возвращает объект "approveHistory", который содержит массив объектов комплексного типа, 
+			содержащих поля: 
+							 - String DevPhase - фаза разработки бизнес-инициативы,
+							 - String DeptName - название подразделения разработчика,
+							 - String EmpPosition - должность разработчика,
+							 - String EmpName - ФИО разработчика,
+							 - String EmpLogin - логин разработчика,
+							 - String Result - результат фазы,
+							 - Date DateTo - дата назначенной обработки фазы,
+							 - Date DateNom - реальная дата обработки фазы,
+							 - String Comment - комментарий,
+			                 - String DLG_IdDev - ID родительской операции делегирования,
+							 - String DLG_DeptName - те же параметры новой фазы делегирования
+							 - String DLG_EmpPosition - // -
+							 - String DLG_EmpName - // -
+							 - String DLG_EmpLogin - // -
+							 - String DLG_Result - // -
+							 - Date DLG_DateTo - // -
+							 - Date DLG_DateNom - // -
+							 - String DLG_Comment - // -
+	
+	- addConfirmByBusinessInitiative - добавление согласования(согласований) по ID бизнес-инициативы
+	
+	- getConfirmHistoryByBusinessInitiative - получение истории согласований по ID бизнес-инициативы
+	
+	- addConfirmCuratorByBusinessInitiative - добавление согласования(согласований) руководителем по ID бизнес-инициативы
+	
+	- getConfirmCuratorHistoryByBusinessInitiative - получение истории согласований руководителем по ID бизнес-инициативы
+	
+	- addFamiliarizeByBusinessInitiative - добавление ознакомления(ознакомлений) по ID бизнес-инициативы
+	
+	- getFamiliarizeHistoryByBusinessInitiative - получение истории ознакомления по ID бизнес-инициативы
+	
+  --------------------------------------------------- РАБОТА С БИЗНЕС-ПРЕДЛОЖЕНИЕМ -------------------------------------------------------
+    
+	- addBusinessOffer - добавление бизнес-предложения
+		запрос: - addBusinessOfferRequest - принимает параметр "businessOffer" типа TBusinessOffer
+		ответ:  - addBusinessOfferResponse - возвращает поле "businessOfferId", которое содержит ID добавленного бизнес-предложения
+	
+	- getBusinessOfferById - получение бизнес-предложения по ID
+		запрос: - getBusinessOfferByIdRequest - принимает параметр "businessOfferId" типа Long
+		ответ:  - getBusinessOfferByIdResponse - возвращает объект "businessOffer" бизнес-предложения
+	
+	- updateBusinessOfferById - обновление бизнес-предложения по ID
+		запрос: - updateBusinessOfferByIdByIdRequest - принимает параметр "businessOffer" типа TBusinessOffer и 
+		"businessOfferId" - ID обновляемого предложения
+		ответ:  - updateBusinessOfferByIdResponse - возвращает поле "message" о удачном обновлении бизнес-предложения
+	
+	- addApproveByBusinessOffer - добавление утверждения(утверждений) по ID бизнес-предложения
+		запрос: - addApproveByBusinessOfferRequest - принимает параметры "businessOfferId" типа Long и "approve" типа TOnDevelopmentRec, 
+		содержащий поля:
+							 - String DeptName - название подразделения разработчика,
+							 - String EmpPosition - должность разработчика,
+							 - String EmpName - ФИО разработчика,
+							 - String EmpLogin - логин разработчика,
+							 - String Result - результат фазы,
+							 - Date DateTo - дата назначенной обработки фазы,
+							 - Date DateNom - реальная дата обработки фазы,
+							 - String Comment - комментарий,
+							 - String DLG_DeptName - те же параметры новой фазы делегирования
+							 - String DLG_EmpPosition - // -
+							 - String DLG_EmpName - // -
+							 - String DLG_EmpLogin - // -
+							 - String DLG_Result - // -
+							 - Date DLG_DateTo - // -
+							 - Date DLG_DateNom - // -
+							 - String DLG_Comment - // -
+		ПРИМЕЧАНИЕ: ПРИ ДОБАВЛЕНИИ ОПЕРАЦИИ ДЕЛЕГИРОВАНИЯ ЗНАЧЕНИЯ ПОЛЕЙ DeptName, EmpPosition, EmpName, EmpLogin, Result, DateTo, DateNom, Comment
+		ДОЛЖНЫ СОВПАДАТЬ С ПОЛЯМИ DLG_DeptName, DLG_EmpPosition, DLG_EmpName, DLG_EmpLogin, DLG_Result, DLG_DateTo, DLG_DateNom ПРЕДШЕСТВУЮЩЕЙ ОПЕРАЦИИ
+		ДЕЛЕГИРОВАНИЯ СООТВЕТСТВЕННО.
+		ответ:  - addApproveByBusinessOfferResponse
+	
+	- getApproveHistoryByBusinessOffer - получение истории утверждений по ID бизнес-предложения
+	    запрос: - getApproveHistoryByBusinessOfferRequest - принимает параметр "businessOfferId" типа Long
+		ответ:  - getApproveHistoryByBusinessOfferResponse - возвращает объект "approveHistory", который содержит массив объектов комплексного типа, 
+			содержащих поля: 
+							 - String DevPhase - фаза разработки бизнес-предложения,
+							 - String DeptName - название подразделения разработчика,
+							 - String EmpPosition - должность разработчика,
+							 - String EmpName - ФИО разработчика,
+							 - String EmpLogin - логин разработчика,
+							 - String Result - результат фазы,
+							 - Date DateTo - дата назначенной обработки фазы,
+							 - Date DateNom - реальная дата обработки фазы,
+							 - String Comment - комментарий,
+			                 - String DLG_IdDev - ID родительской операции делегирования,
+							 - String DLG_DeptName - те же параметры новой фазы делегирования
+							 - String DLG_EmpPosition - // -
+							 - String DLG_EmpName - // -
+							 - String DLG_EmpLogin - // -
+							 - String DLG_Result - // -
+							 - Date DLG_DateTo - // -
+							 - Date DLG_DateNom - // -
+							 - String DLG_Comment - // -
+	
+	- addConfirmByBusinessOffer - добавление согласования(согласований) по ID бизнес-предложения
+	
+	- getConfirmHistoryByBusinessOffer - получение истории согласований по ID бизнес-предложения
+	
+	- addConfirmProductTeamByBusinessOffer - добавление согласования(согласований) руководителем по ID бизнес-предложения
+	
+	- getConfirmProductTeamHistoryByBusinessOffer - получение истории согласований руководителем по ID бизнес-предложения	
+	
+	- addConfirmCuratorByBusinessOffer - добавление согласования(согласований) продуктовой командой по ID бизнес-предложения
+	
+	- getConfirmCuratorHistoryByBusinessOffer - получение истории согласований продуктовой командой по ID бизнес-предложения
+	
+	- addOpinionByBusinessOffer - добавление утверждения(утверждений) с изменениями по ID бизнес-предложения
+	
+	- getOpinionHistoryByBusinessOffer - получение истории утверждений с изменениями по ID бизнес-предложения
+	
+  --------------------------------------------------- РАБОТА С КАРТОЧКОЙ БАНКОВСКОГО ПРОДУКТА -------------------------------------------------------
+  
+    - addBankingProductCard - добавление карточки банковского продукта
+		запрос: - addBankingProductCardRequest - принимает параметр "bankingProductCard" типа TBankingProductCard
+		ответ:  - addBankingProductCardResponse - возвращает поле "bankingProductCardId", которое содержит ID добавленной карточки банковского продукта
+	
+	- getBankingProductCardById - получение карточки банковского продукта по ID
+		запрос: - getBankingProductCardByIdRequest - принимает параметр "bankingProductCardId" типа Long
+		ответ:  - getBankingProductCardByIdResponse - возвращает объект "bankingProductCard" карточки банковского продукта
+	
+	- updateBankingProductCardById - обновление карточки банковского продукта по ID
+		запрос: - updateBankingProductCardByIdRequest - принимает параметр "bankingProductCard" типа TBankingProductCard и 
+		"bankingProductCardId" - ID обновляемой карточки банковского продукта
+		ответ:  - updateBankingProductCardByIdResponse - возвращает поле "message" о удачном обновлении карточки банковского продукта
+		
+  --------------------------------------------------- РАБОТА С ИСТОРИЕЙ ИЗМЕНЕНИЙ -------------------------------------------------------
+  
+	- getChangesHistoryByBusinessInitiative - получение истории изменений атрибутов бизнес-инициативы по ID
+	    запрос: - getChangesHistoryByBusinessInitiativeRequest - принимает параметр "businessInitiativeId" типа Long
+		ответ:  - getChangesHistoryByBusinessInitiativeResponse - возвращает объект "changesHistory" истории изменений атрибутов бизнес-инициативы
+		
+  --------------------------------------------------- РАБОТА С WEBLOGIC - ПОЛЬЗОВАТЕЛЯМИ -------------------------------------------------------	
+
+	- getWeblogicUsers - получение списка пользователей WebLogic-сервера
+		запрос: - getWeblogicUsersRequest
+		ответ:  - getWeblogicUsersResponse - возвращает объект "weblogicUsers" содержащий список пользователей WebLogic-сервера
+		
+  --------------------------------------------------- РАБОТА С ОТЧЕТОМ ОБ ОЦЕНКЕ ОКУПАЕМОСТИ ------------------------------------------------------
+  
+	- addPaybackAssessmentReport - добавление отчета об оценке окупаемости
+		запрос: - addPaybackAssessmentReportRequest - принимает параметр "paybackAssessmentReport" типа TPaybackAssessmentReport
+		ответ:  - addPaybackAssessmentReportResponse - возвращает поле "paybackAssessmentReportId", которое содержит ID добавленного отчета об оценке окупаемости
+	
+	- getPaybackAssessmentReportById - получение отчета об оценке окупаемости по ID
+		запрос: - getPaybackAssessmentReportByIdRequest - принимает параметр "paybackAssessmentReportId" типа Long
+		ответ:  - getPaybackAssessmentReportByIdResponse - возвращает объект "paybackAssessmentReport" отчета об оценке окупаемости
+	
+	- updatePaybackAssessmentReportById - обновление отчета об оценке окупаемости по ID
+		запрос: - updatePaybackAssessmentReportByIdRequest - принимает параметр "paybackAssessmentReport" типа TPaybackAssessmentReport и 
+		"paybackAssessmentReportId" - ID обновляемого отчета об оценке окупаемости
+		ответ:  - updatePaybackAssessmentReportByIdResponse - возвращает поле "message" о удачном обновлении отчета об оценке окупаемости
+		
+  --------------------------------------------------- РАБОТА С ОТЧЕТОМ О МОНИТОРИНГЕ ПРОДУКТА ------------------------------------------------------				
+
+	- addMonitorProductReport - добавление отчета о мониторинге продукта
+		запрос: - addMonitorProductReportRequest - принимает параметр "monitorProductReport" типа TMonitorProductReport
+		ответ:  - addMonitorProductReportResponse - возвращает поле "monitorProductReportId", которое содержит ID добавленного отчета о мониторинге продукта
+	
+	- getMonitorProductReportById - получение отчета о мониторинге продукта по ID
+		запрос: - getMonitorProductReportByIdRequest - принимает параметр "monitorProductReportId" типа Long
+		ответ:  - getMonitorProductReportByIdResponse - возвращает объект "monitorProductReport" отчета о мониторинге продукта
+	
+	- updateMonitorProductReportById - обновление отчета о мониторинге продукта по ID
+		запрос: - updateMonitorProductReportByIdRequest - принимает параметр "monitorProductReport" типа TMonitorProductReport и 
+		"monitorProductReportId" - ID обновляемого отчета о мониторинге продукта
+		ответ:  - updateMonitorProductReportByIdResponse - возвращает поле "message" о удачном обновлении отчета о мониторинге продукта
+

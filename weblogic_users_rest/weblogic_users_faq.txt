@@ -1,0 +1,11 @@
+http://soabpm-server:7004/weblogicusers/v1 +
+/users - получение всех пользователей
+/users?login=testuser5 - по логину
+/users?name=Sergei%20Bistrov - по отображаемому имени
+/users?department=finance - по подразделению
+/users?position=manager - по должности
+/users?position=manager&department=finance - по должности и подразделению
+/departments - список подразделений
+/departments?isDeveloper=true - подразделения с признаком разработчика
+/positions - список должностей
+/positions?department=security - должности по подразделению

@@ -1,0 +1,8 @@
+http://soabpm-server:7004/products/{id} - получить полное описание продукта по id
+http://soabpm-server:7004/products?contragentType=ph - получить описание продукта по виду контрагента - физ.
+http://soabpm-server:7004/products?contragentType=le - получить описание продукта по виду контрагента - юр.
+http://soabpm-server:7004/products?productClass= - получить описание продукта по классу
+http://soabpm-server:7004/products?productType= - получить описание продукта по типу
+http://soabpm-server:7004/products?productName= - получить описание продукта по наименованию
+http://soabpm-server:7004/products?creationDate= - получить описание продукта по дате создания(в формате dd-MM-yyyy)
+http://soabpm-server:7004/products?validityTerm= - получить описание продукта по сроку действия
